@@ -1,6 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { CreateUserDto } from './user.dto';
 import { UserService } from './user.service';
+import { MessagePattern } from '@nestjs/microservices';
 
 @Controller('user')
 export class UserController {
@@ -10,5 +11,8 @@ export class UserController {
     async create(@Body() dto:CreateUserDto){
        return await this.userService.create(dto)
     }
+
+
+
 
 }
